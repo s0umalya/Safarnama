@@ -1,0 +1,16 @@
+<mat-toolbar>
+  <a routerLink="home">
+    <img src="/assets/logo.png" class="logo" />
+  </a>
+  <div class="spacer"></div>
+  <a mat-button [routerLink]="['home']">Home</a>
+  <button mat-button [matMenuTriggerFor]="belowMenu">Packages</button>
+  <mat-menu #belowMenu="matMenu" yPosition="below">
+    <button mat-menu-item routerLink="packages">Regular Packages</button>
+    <button mat-menu-item>Special Packages</button>
+  </mat-menu>
+  <a mat-button routerLink="store">Store</a>
+  <a mat-button href="#about-us">About Us</a>
+  <a mat-button>Contact Us</a>
+  <a mat-raised-button routerLink="login">Login</a>
+</mat-toolbar>

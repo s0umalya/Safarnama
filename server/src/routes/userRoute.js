@@ -6,7 +6,7 @@ const bcrypt = require("bcryptjs");
 const userObj = require("../models/user");
 const userService = require("../services/userService");
 //Register User Route
-routing.post("/registerUser", async (req, res, next) => {
+routing.post("/register", async (req, res, next) => {
   try {
     let userData = new userObj(req.body);
 

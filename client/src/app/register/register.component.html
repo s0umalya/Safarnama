@@ -1,0 +1,71 @@
+<div class="register-page-bg-img"></div>
+<div class="register-page-form-container">
+  <mat-card class="register-card">
+    <mat-card-header>
+      <mat-card-title>Sign Up</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form [formGroup]="signupForm">
+        <div class="input-firstName">
+          <mat-form-field appearance="outline">
+            <mat-label>First Name</mat-label>
+            <input
+              type="text"
+              matInput
+              placeholder="Enter your first name"
+              id="firstName"
+              name="firstName"
+              formControlName="firstName"
+              required
+            />
+          </mat-form-field>
+          <div
+            id="firstNameError"
+            *ngIf="
+              (firstName.touched && firstName.invalid) ||
+              (firstName.dirty && firstName.invalid)
+            "
+          >
+            <span *ngIf="firstName.errors.required" class="text-danger">
+              First name is required
+            </span>
+            <span *ngIf="firstName.errors.maxLength" class="text-danger">
+              First name cannot have more than 30 characters
+            </span>
+          </div>
+        </div>
+        <div class="input-lastName">
+          <mat-form-field appearance="outline">
+            <mat-label>Last Name</mat-label>
+            <input
+              matInput
+              placeholder="Enter your last name"
+              id="lastName"
+              name="lastName"
+              formControlName="lastName"
+              required
+            />
+          </mat-form-field>
+          <div
+            id="lastNameError"
+            *ngIf="
+              (lastName.touched && lastName.invalid) ||
+              (lastName.dirty && lastName.invalid)
+            "
+          >
+            <span *ngIf="lastName.errors.required" class="text-danger">
+              Last name is required
+            </span>
+            <span *ngIf="lastName.errors.maxLength" class="text-danger">
+              Last name cannot have more than 30 characters
+            </span>
+          </div>
+        </div>
+      </form>
+      <span style="display: flex;">
+        <p>Already have an account?</p>
+        <a routerLink="../register">Sign In</a>
+      </span>
+    </mat-card-content>
+  </mat-card>
+</div>

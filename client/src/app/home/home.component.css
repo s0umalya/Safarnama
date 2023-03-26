@@ -1,0 +1,107 @@
+.container-heading {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 3rem 1rem;
+  color: #464646;
+  padding-top: 3rem;
+}
+
+.stat-figures-div {
+  display: flex;
+  justify-content: center;
+}
+
+.stat-figure {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.stat-num {
+  font-size: 4rem;
+  font-weight: 800;
+  margin: 1rem 1rem 0 1rem;
+  /* color: #66d1c4; */
+  color: #673ab7;
+}
+
+.stat-def {
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 2rem;
+  /* color: #673ab7; */
+  color: #66d1c4;
+}
+
+.check-icon {
+  height: 2rem;
+  margin: 1rem;
+}
+
+.amenity-element {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.amenity {
+  display: flex;
+  align-items: center;
+}
+
+.amenities-points-div {
+  display: flex;
+  justify-content: center;
+}
+
+/* .about-us-container {
+  background-color: #f8f9fa;
+} */
+
+.quote-div {
+  overflow: hidden;
+}
+
+.left-quote-icon {
+  height: 5rem;
+  margin-left: 5rem;
+}
+
+.right-quote-icon {
+  height: 5rem;
+  float: right;
+  margin-right: 5rem;
+  transform: rotate(180deg);
+}
+
+.quote-txt {
+  font-size: 2rem;
+  font-family: serif;
+  font-weight: 600;
+  font-style: italic;
+  text-align: center;
+  color: #673ab7;
+}
+
+.quote-by {
+  text-align: end;
+  padding-right: 15rem;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #673ab7;
+  margin-top: 1.5rem;
+  font-family: monospace;
+}
+
+.about-us-txt {
+  text-align: justify;
+  margin: 2rem 14rem;
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  line-height: 3rem;
+}
