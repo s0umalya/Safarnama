@@ -6,6 +6,7 @@ exports.createTripPackage = async (req, res) => {
       title,
       description,
       category,
+      meetingPoints,
       duration,
       basePricePerPerson,
       tags,
@@ -20,6 +21,7 @@ exports.createTripPackage = async (req, res) => {
       !title ||
       !description ||
       !category ||
+      !meetingPoints ||
       !duration ||
       !duration.days ||
       basePricePerPerson === undefined ||
@@ -39,6 +41,7 @@ exports.createTripPackage = async (req, res) => {
       title,
       description,
       category,
+      meetingPoints,
       duration,
       basePricePerPerson,
       tags,

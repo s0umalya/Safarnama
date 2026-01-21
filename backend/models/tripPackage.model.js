@@ -16,6 +16,22 @@ const tripPackageSchema = mongoose.Schema(
             enum: ['CLASSIC', 'THRILL', 'SPECIAL'],
             required: true
         },
+        //MEETING POINTS
+        meetingPoints: [
+            {
+                code: {
+                    type: String,
+                    required: true
+                },
+                label: {
+                    type: String,
+                    required: true
+                },
+                address: {
+                    type: String
+                }
+            }
+        ],
         //DURATION
         duration: {
             days: {
