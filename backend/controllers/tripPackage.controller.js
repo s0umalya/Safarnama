@@ -98,3 +98,40 @@ exports.updateTripPackage = async (req, res) => {
   }
 };
 
+exports.updateTripPackageStatus = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { isActive } = req.body;
+
+    if (typeof isActive !== 'boolean') {
+      return res.status(400).json({
+        message: 'isActive must be a boolean'
+      });
+    }
+
+    const tripPackage = await TripPackage.findByIdAndUpdate(
+      id,
+      { isActive },
+      { new: true }
+    );
+
+    if (!tripPackage) {
+      return res.status(404).json({
+        message: 'Trip package not found'
+      });
+    }
+
+    res.status(200).json({
+      message: `Trip package ${isActive ? 'enabled' : 'disabled'} successfully`,
+      tripPackage
+    });
+
+  } catch (error) {
+    console.error('Update Status Error:', error);
+    res.status(500).json({
+      message: 'Server error'
+    });
+  }
+};
+
+
