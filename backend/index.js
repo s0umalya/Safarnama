@@ -10,6 +10,7 @@ const connectDB = require('./config/db');
 const authRoutes = require('./routes/auth.routes');
 const userRoutes = require('./routes/user.routes');
 const adminRoutes = require('./routes/admin.routes');
+const tripPackageRoutes = require('./routes/tripPackage.routes');
 
 const app = express();
 
@@ -26,6 +27,7 @@ connectDB();
 app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/admin', adminRoutes);
+app.use('/api/trip-packages', tripPackageRoutes);
 
 // Test route
 app.get('/api/health', (req, res) => {
