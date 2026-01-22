@@ -4,7 +4,7 @@ const router = express.Router();
 const { authenticate } = require('../middleware/auth.middleware');
 const { authorizeRoles } = require('../middleware/role.middleware');
 const { createTripPackage, getAllBookings  } = require('../controllers/admin.controller');
-const { confirmBooking } = require('../controllers/booking.controller')
+const { confirmBooking, cancelBooking } = require('../controllers/booking.controller')
 
 router.post(
   '/create-packages',
@@ -25,6 +25,12 @@ router.patch(
   authenticate,
   authorizeRoles('ADMIN'),
   confirmBooking
+);
+
+router.patch(
+  '/:id/cancel',
+  authenticate,
+  cancelBooking
 );
 
 module.exports = router;

@@ -158,5 +158,46 @@ exports.confirmBooking = async (req, res) => {
   }
 };
 
+exports.cancelBooking = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const userId = req.user.userId;
+    const role = req.user.role;
+
+    const booking = await Booking.findById(id);
+
+    if (!booking) {
+      return res.status(404).json({
+        message: 'Booking not found'
+      });
+    }
+
+    // User can cancel only their own booking
+    if (role !== 'ADMIN' && booking.user.toString() !== userId) {
+      return res.status(403).json({
+        message: 'Not authorized to cancel this booking'
+      });
+    }
+
+    if (booking.status === 'CANCELLED') {
+      return res.status(400).json({
+        message: 'Booking already cancelled'
+      });
+    }
+
+    booking.status = 'CANCELLED';
+    await booking.save();
+
+    res.status(200).json({
+      message: 'Booking cancelled successfully'
+    });
+
+  } catch (error) {
+    console.error('Cancel Booking Error:', error);
+    res.status(500).json({
+      message: 'Server error'
+    });
+  }
+};
 
 
