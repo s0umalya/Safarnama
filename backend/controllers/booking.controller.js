@@ -200,4 +200,43 @@ exports.cancelBooking = async (req, res) => {
   }
 };
 
+exports.getBookingById = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const userId = req.user.userId;
+    const role = req.user.role;
+
+    // Fetch booking
+    const booking = await Booking.findById(id)
+      .populate('tripPackage', 'title');
+
+    if (!booking) {
+      return res.status(404).json({
+        message: 'Booking not found'
+      });
+    }
+
+    // Authorization check
+    // - Admin can view any booking
+    // - User can view only their own booking
+    if (
+      role !== 'ADMIN' &&
+      booking.user.toString() !== userId
+    ) {
+      return res.status(403).json({
+        message: 'Not authorized to view this booking'
+      });
+    }
+
+    res.status(200).json(booking);
+
+  } catch (error) {
+    console.error('Get Booking Detail Error:', error);
+    res.status(500).json({
+      message: 'Server error'
+    });
+  }
+};
+
+
 

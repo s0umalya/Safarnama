@@ -26,7 +26,7 @@ router.patch(
   authorizeRoles('ADMIN'),
   confirmBooking
 );
-
+//For both ADMIN & CUSTOMER
 router.patch(
   '/:id/cancel',
   authenticate,
