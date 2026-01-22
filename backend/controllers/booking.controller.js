@@ -125,3 +125,38 @@ exports.getMyBookings = async (req, res) => {
   }
 };
 
+exports.confirmBooking = async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const booking = await Booking.findById(id);
+
+    if (!booking) {
+      return res.status(404).json({
+        message: 'Booking not found'
+      });
+    }
+
+    if (booking.status !== 'PENDING') {
+      return res.status(400).json({
+        message: `Booking cannot be confirmed from status ${booking.status}`
+      });
+    }
+
+    booking.status = 'CONFIRMED';
+    await booking.save();
+
+    res.status(200).json({
+      message: 'Booking confirmed successfully'
+    });
+
+  } catch (error) {
+    console.error('Confirm Booking Error:', error);
+    res.status(500).json({
+      message: 'Server error'
+    });
+  }
+};
+
+
+
