@@ -86,7 +86,7 @@ exports.createBooking = async (req, res) => {
 
       status: 'PENDING'
     });
-    
+
     //Save booking
     await booking.save();
 
@@ -102,3 +102,26 @@ exports.createBooking = async (req, res) => {
     });
   }
 };
+
+exports.getMyBookings = async (req, res) => {
+  try {
+    // Logged-in user ID comes from auth middleware
+    const userId = req.user.userId;
+
+    // Fetch bookings for this user
+    const bookings = await Booking.find({ user: userId })
+      .sort({ createdAt: -1 })
+      .select(
+        'tripSnapshot travelDate numberOfPeople priceSnapshot status createdAt'
+      );
+
+    res.status(200).json(bookings);
+
+  } catch (error) {
+    console.error('Get My Bookings Error:', error);
+    res.status(500).json({
+      message: 'Server error'
+    });
+  }
+};
+
