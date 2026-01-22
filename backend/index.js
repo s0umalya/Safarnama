@@ -12,6 +12,7 @@ const userRoutes = require('./routes/user.routes');
 const adminRoutes = require('./routes/admin.routes');
 const tripPackageRoutes = require('./routes/tripPackage.routes');
 const bookingRoutes = require('./routes/booking.routes');
+const paymentRoutes = require('./routes/payment.routes');
 
 const app = express();
 
@@ -30,6 +31,7 @@ app.use('/api/users', userRoutes);
 app.use('/api/admin', adminRoutes);
 app.use('/api/trip-packages', tripPackageRoutes);
 app.use('/api/bookings', bookingRoutes);
+app.use('/api/payments', paymentRoutes);
 
 // Test route
 app.get('/api/health', (req, res) => {
