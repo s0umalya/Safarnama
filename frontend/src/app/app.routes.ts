@@ -6,12 +6,12 @@ export const routes: Routes = [
     path: '',
     component: LayoutComponent,
     children: [
-    //   {
-    //     path: '',
-    //     loadComponent: () =>
-    //       import('./features/home/pages/home.page')
-    //         .then(m => m.HomePage)
-    //   },
+      {
+        path: '',
+        loadComponent: () =>
+          import('./pages/home/home.page')
+            .then(m => m.HomePage)
+      },
     //   {
     //     path: 'trips',
     //     loadChildren: () =>
