@@ -1,14 +1,36 @@
-<mat-toolbar color="primary" class="navbar">
+<mat-sidenav-container class="sidenav-container">
 
-  <!-- Brand -->
-  <span class="brand">Safarnama</span>
+    <!-- Mobile sidenav -->
+    <mat-sidenav mode="over" [opened]="menuOpen()" (closedStart)="closeMenu()">
+        <nav class="mobile-links">
+            <a mat-button routerLink="/" (click)="closeMenu()">Home</a>
+            <a mat-button routerLink="/trips" (click)="closeMenu()">Trips</a>
+            <a mat-button routerLink="/login" (click)="closeMenu()">Login</a>
+        </nav>
+    </mat-sidenav>
 
-  <!-- Push nav items to the right -->
-  <span class="spacer"></span>
+    <!-- Main content -->
+    <mat-sidenav-content>
 
-  <!-- Navigation links -->
-  <a mat-button routerLink="/">Home</a>
-  <a mat-button routerLink="/trips">Trips</a>
-  <a mat-button routerLink="/login">Login</a>
+        <!-- Toolbar -->
+        <mat-toolbar color="primary" class="navbar">
 
-</mat-toolbar>
+            <button mat-icon-button class="menu-btn" (click)="toggleMenu()" aria-label="Open menu">
+                <mat-icon>menu</mat-icon>
+            </button>
+
+            <span class="brand">Safarnama</span>
+            <span class="spacer"></span>
+
+            <!-- Desktop links -->
+            <div class="desktop-links">
+                <a mat-button routerLink="/">Home</a>
+                <a mat-button routerLink="/trips">Trips</a>
+                <a mat-button routerLink="/login">Login</a>
+            </div>
+
+        </mat-toolbar>
+
+    </mat-sidenav-content>
+
+</mat-sidenav-container>

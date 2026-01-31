@@ -1,3 +1,7 @@
+.sidenav-container {
+  height: 100vh; // THIS is the missing piece
+}
+
 .navbar {
   position: sticky;
   top: 0;
@@ -11,4 +15,31 @@
 
 .spacer {
   flex: 1 1 auto;
+}
+
+/* Desktop default */
+.menu-btn {
+  display: none;
+}
+
+.desktop-links {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .menu-btn {
+    display: inline-flex;
+  }
+
+  .desktop-links {
+    display: none;
+  }
+}
+
+.mobile-links {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
 }
