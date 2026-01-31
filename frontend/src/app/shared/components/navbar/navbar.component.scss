@@ -1,45 +1,35 @@
-.sidenav-container {
-  height: 100vh; // THIS is the missing piece
-}
-
 .navbar {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .brand {
-  font-size: 1.1rem;
-  font-weight: 600;
+    font-size: 1.1rem;
+    font-weight: 600;
 }
 
 .spacer {
-  flex: 1 1 auto;
+    flex: 1 1 auto;
 }
 
-/* Desktop default */
+/* Desktop */
 .menu-btn {
-  display: none;
+    display: none;
 }
 
 .desktop-links {
-  display: flex;
-  gap: 0.5rem;
+    display: flex;
+    gap: 0.5rem;
 }
 
 /* Mobile */
 @media (max-width: 768px) {
-  .menu-btn {
-    display: inline-flex;
-  }
+    .menu-btn {
+        display: inline-flex;
+    }
 
-  .desktop-links {
-    display: none;
-  }
-}
-
-.mobile-links {
-  display: flex;
-  flex-direction: column;
-  padding: 1rem;
+    .desktop-links {
+        display: none;
+    }
 }

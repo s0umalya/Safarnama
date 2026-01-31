@@ -1,3 +1,13 @@
+.layout-container {
+    height: 100vh;
+}
+
 .app-content {
+    padding: 1rem;
+}
+
+.mobile-links {
+    display: flex;
+    flex-direction: column;
     padding: 1rem;
 }
