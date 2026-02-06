@@ -1,0 +1,40 @@
+.hero-section {
+  display: flex;
+  justify-content: center;
+  padding: 3rem 1rem;
+}
+
+.hero-card {
+  max-width: 800px;
+  width: 100%;
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+}
+
+.hero-title {
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+  font-size: 1.05rem;
+  margin-bottom: 2rem;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.hero-cta {
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  .hero-title {
+    font-size: 1.7rem;
+  }
+
+  .hero-card {
+    padding: 2rem 1rem;
+  }
+}
