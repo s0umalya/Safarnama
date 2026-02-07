@@ -1,20 +1,29 @@
-<section class="hero-section">
-  <mat-card class="hero-card">
-    <h1 class="hero-title">
-      Explore India with Safarnama
-    </h1>
+<section class="categories-section">
+  <h2 class="section-title">Choose your travel style</h2>
 
-    <p class="hero-subtitle">
-      Curated travel experiences, thoughtfully designed for every kind of traveller.
-    </p>
+  <div class="categories-grid">
+    <mat-card class="category-card" routerLink="/trips">
+      <mat-icon class="category-icon">terrain</mat-icon>
+      <h3>Classic Trips</h3>
+      <p>Comfortable, well-paced journeys across beautiful destinations.</p>
+    </mat-card>
 
-    <button
-      mat-raised-button
-      color="primary"
-      class="hero-cta"
-      routerLink="/trips"
-    >
-      Explore Trips
-    </button>
-  </mat-card>
+    <mat-card class="category-card" routerLink="/trips">
+      <mat-icon class="category-icon">hiking</mat-icon>
+      <h3>Thrill Seeker</h3>
+      <p>Adventure-packed trips for trekking and thrill lovers.</p>
+    </mat-card>
+
+    <mat-card class="category-card" routerLink="/trips">
+      <mat-icon class="category-icon">celebration</mat-icon>
+      <h3>Specials</h3>
+      <p>Festival-focused and limited-time curated experiences.</p>
+    </mat-card>
+
+    <mat-card class="category-card" routerLink="/trips">
+      <mat-icon class="category-icon">build_circle</mat-icon>
+      <h3>Plan Your Own</h3>
+      <p>Create a trip that matches your preferences and schedule.</p>
+    </mat-card>
+  </div>
 </section>
